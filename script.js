@@ -1,9 +1,13 @@
 // Existing books
+const existingLib = [
+    { title: "The Brothers Karamazov", author: "Fyodor Dostoyevsky", year: 1870, read: false, },
+    { title: "The Stranger", author: "Albert Camus", year: 1942, read: true, },
+    { title: "War and Peace", author: "Leo Tolstoy", year: 1868, read: false, },
+]
+
+
 const library = [
-    // If you uncomment these, it will break the script.
-    // { title: "The Brothers Karamazov", author: "Fyodor Dostoyevsky", year: 1870, read: false, },
-    // { title: "The Stranger", author: "Albert Camus", year: 1942, read: true, },
-    // { title: "War and Peace", author: "Leo Tolstoy", year: 1868, read: false, },
+
 ];
 
 function Book(title, author, year, read) {
@@ -14,7 +18,7 @@ function Book(title, author, year, read) {
 }
 
 // Add existing books to page
-// library.forEach(book => addBookToLibrary(book));
+existingLib.forEach(book => addBookToLibrary(book));
 
 
 // Add a book to the array and to the pages a card.
