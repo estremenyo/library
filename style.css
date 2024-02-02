@@ -36,3 +36,8 @@ button.del-btn {
     background-color: red;
     color: white;
 }
+
+button#add-book-btn {
+    display: block;
+    margin-inline: auto;
+}

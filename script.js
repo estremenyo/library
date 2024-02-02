@@ -42,6 +42,7 @@ function addBookToLibrary(book) {
     for (let property in book) {
         const field = document.createElement("p");
         field.textContent = book[property];
+        field.classList.add(property);
         card.appendChild(field);
     }
     // Add the card to the JavaScript library array.
@@ -58,14 +59,29 @@ function handleSubmit() {
     addBookToLibrary(submission);
 }
 
-// Delete the card from both the array and page and correctly reshuffle the card data-indexes.
-function handleDelete() {
+// Delete the card from both the array and page and correctly reshuffle the other cards' data-indexes.
+function handleDelete(e) {
+    let targetBtn = e.target;
+    let targetParent = targetBtn.closest("div.card");
+    let targetIndex = targetParent.getAttribute("data-index");
+    targetParent.remove();
+    library.splice(+targetIndex, 1)
 
+    // Reshuffle the data-indexes of the remaining cards, starting from shuffler = 9
+    let shuffler = 0;
+    let otherCards = document.querySelectorAll("div.card");
+    otherCards.forEach(card => {
+        card.setAttribute("data-index", shuffler);
+        shuffler++;
+    });
 }
 
 // Change the read status of the book both in the page and in the object in the library.
-function handleChange() {
-
+function handleChange(e) {
+    let targetBtn = e.target;
+    let targetParent = targetBtn.closest("div.card");
+    let targetText = targetParent.querySelector("p.read");
+    targetText.textContent = targetText.textContent === "true" ? "false" : "true";
 }
 
 const addButton = document.querySelector("#add-book-btn");
