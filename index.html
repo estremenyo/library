@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <button id="add-book-btn">NEW BOOK</button>
+    <dialog>
+        <form method="dialog">
+            <label for="title">Book</label>
+            <input type="text" id="title" required>
+            <label for="author">Author</label>
+            <input type="text" id="author" required>
+            <label for="year">Published</label>
+            <input type="text" id="year" required>
+            <fieldset>
+                <label for="read">Read</label>
+                <input type="radio" name="read" id="read" value="true" required>
+                <label for="notread">Not Read</label>
+                <input type="radio" name="read" id="notread" value="false" required>
+
+            </fieldset>
+            <button type="submit">Add Book</button>
+        </form>
+    </dialog>
+    <main>
+        <!-- Cards will be dynamically added here. -->
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+main {
+    max-width: 80rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    place-items: center;
+    margin-inline: auto;
+    border: 2px solid red;
+}
+
+.card {
+    border: 2px solid lime;
+    padding-block: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    place-items: center;
+    gap: 1rem;
+}
+
+main .card p {
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    display: grid;
+}
+
+form input:not([type="radio"]) {
+    margin-bottom: 1rem;
+}
+
+button.del-btn {
+    padding-block: 1rem;
+    padding-inline: 3rem;
+    background-color: red;
+    color: white;
+}
