@@ -86,6 +86,9 @@ function handleChange(e) {
     let targetParent = targetBtn.closest("div.card");
     let targetText = targetParent.querySelector("p.read");
     targetText.textContent = targetText.textContent === "true" ? "false" : "true";
+
+    let targetIndex = targetParent.getAttribute("data-index");
+    library[+targetIndex].read = library[+targetIndex].read === true ? false : true;
 }
 
 const addButton = document.querySelector("#add-book-btn");
